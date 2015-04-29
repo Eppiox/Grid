@@ -1,4 +1,4 @@
-function Player(options){
+function Enemy(options){
 	this.xPos = options.xPos;
 	this.yPos = options.yPos;
 	this.hp = options.hp;
@@ -7,36 +7,36 @@ function Player(options){
 	this.oldY = this.yPos;
 }
 
-Player.prototype.getX = function(){
+Enemy.prototype.getX = function(){
 	return this.xPos;
 }
 
-Player.prototype.getY = function(){
+Enemy.prototype.getY = function(){
 	return this.yPos;
 }
 
-Player.prototype.goldX = function(){
+Enemy.prototype.goldX = function(){
 	return this.oldX;
 }
 
-Player.prototype.goldY = function(){
+Enemy.prototype.goldY = function(){
 	return this.oldY;
 }
-Player.prototype.setX = function(newX){
+Enemy.prototype.setX = function(newX){
 	this.oldX = this.xPos;
 	this.oldY = this.yPos;
 	this.xPos = newX;
 }
-Player.prototype.setY = function(newY){
+Enemy.prototype.setY = function(newY){
 	this.oldY = this.yPos;
 	this.oldX = this.xPos;
 	this.yPos = newY;
 }
 
 
-Player.prototype.render = function(options){
+Enemy.prototype.render = function(options){
 	context.drawImage( 
-		images.player,
+		images.enemy,
 		0,
 		0,
 		TILE_WIDTH,
